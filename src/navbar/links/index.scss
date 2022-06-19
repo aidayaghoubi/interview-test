@@ -1,0 +1,38 @@
+.linkBox{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    
+    & P{
+        font-size: 12PX;
+    }
+
+    & a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & p{
+            display: none;
+            opacity: 0;
+        }
+
+        & span svg{
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+.open{
+align-items: flex-start;
+
+& a {
+    & p{
+        display: block;
+        opacity: 1;
+    }
+}
+}

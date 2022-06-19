@@ -1,0 +1,51 @@
+.navbar {
+  height: 95vh;
+  width: 100px;
+  border-radius: 12px;
+  //SHOULD CHANGE
+  background-color: var(--light-primary-color);
+  margin: 12px;
+  box-shadow: 0px 0px 8px 2px #55555526;
+  position: relative;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  & .open-menu-btn {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 16px 2px rgb(148 137 137 / 20%);
+    right: -11px;
+    top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & svg {
+      width: 7px;
+    }
+  }
+  & .logo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      & svg{
+          width: 45px;
+      }
+  }
+}
+
+.open{
+    width: 350px;
+    transition: 0.5s;
+   
+}
