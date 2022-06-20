@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./Navbar.scss";
-import Links from "./links";
-import * as svg from "../assets/Svg1"
+import Links from "./links/Link";
+import * as svg from "../assets/Svg1";
+import SwitchTheme from "./switchTeme/switchTheme";
+import Profile from "./profile/profile";
 
 const MENU_ITEMS = [
   {
@@ -10,12 +12,12 @@ const MENU_ITEMS = [
       {
         title: "Dashboard",
         link: "/#",
-        icon:svg.Svg6()
+        icon: svg.Svg6(),
       },
       {
         title: "Performance",
         link: "/#",
-        icon:svg.Svg7()
+        icon: svg.Svg7(),
       },
     ],
   },
@@ -25,23 +27,22 @@ const MENU_ITEMS = [
       {
         title: "Guides",
         link: "/#",
-        icon:svg.Svg1()
+        icon: svg.Svg1(),
       },
       {
         title: "Hotspots",
         link: "/#",
-        icon:svg.Svg2()
-      
+        icon: svg.Svg2(),
       },
       {
         title: "CheckLists",
         link: "/#",
-        icon:svg.Svg3()
+        icon: svg.Svg3(),
       },
       {
         title: "NPS",
         link: "/#",
-        icon:svg.Svg4()
+        icon: svg.Svg4(),
       },
     ],
   },
@@ -51,22 +52,19 @@ const MENU_ITEMS = [
       {
         title: "Segments",
         link: "/#",
-        icon:svg.Svg5()
-      }
-    ]
-  }
+        icon: svg.Svg5(),
+      },
+    ],
+  },
 ];
 
 const Navbar = () => {
 
   const [openNav, setOpenNav] = useState(false);
-  const className = `navbar ${openNav ? "open" : ""}`;
-
-  console.log(MENU_ITEMS)
 
 
   return (
-    <div className={className}>
+    <div className={`navbar ${openNav ? "open" : "close" }`}>
       <div className="open-menu-btn" onClick={() => setOpenNav(!openNav)}>
         <svg
           width="9"
@@ -87,27 +85,40 @@ const Navbar = () => {
       </div>
       <div className="logo">
         <svg
-          width="54"
-          height="54"
-          viewBox="0 0 54 54"
+          width="18"
+          height="29"
+          viewBox="0 0 18 29"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect width="54" height="54" rx="10" fill="#305DF6" />
           <path
-            d="M26.7153 12.1972C26.8865 12.0786 27.1135 12.0786 27.2847 12.1972L33.4793 16.489C33.8822 16.7681 33.6847 17.4 33.1946 17.4H20.8054C20.3153 17.4 20.1178 16.7681 20.5207 16.489L26.7153 12.1972Z"
+            d="M8.71525 0.197278C8.88654 0.0786085 9.11346 0.0786088 9.28475 0.197279L15.4793 4.489C15.8822 4.76811 15.6847 5.4 15.1946 5.4H2.80543C2.31533 5.4 2.11783 4.76811 2.52068 4.489L8.71525 0.197278Z"
             fill="white"
           />
-          <circle cx="27" cy="22.2" r="3" fill="white" />
-          <path d="M20.4 30V34.2L33.6 29.4V25.2L20.4 30Z" fill="white" />
-          <path d="M20.4 36V40.2L33.6 35.4V31.2L20.4 36Z" fill="white" />
+          <circle cx="9.00003" cy="10.2" r="3" fill="white" />
+          <path
+            d="M2.40002 18.0001V22.2001L15.6 17.4001V13.2001L2.40002 18.0001Z"
+            fill="white"
+          />
+          <path d="M2.40002 24V28.2L15.6 23.4V19.2L2.40002 24Z" fill="white" />
         </svg>
       </div>
-      {
-          MENU_ITEMS?.map((el,i) => (
-              <Links title={el.title} openNav={openNav} key={i} links={el.subMenu} />
-          ))
-      }
+      <div className="linkWrapper">
+        {MENU_ITEMS?.map((el, i) => (
+          <Links
+            title={el.title}
+            openNav={openNav}
+            key={i}
+            links={el.subMenu}
+          />
+        ))}
+      </div>
+      <div style={{
+        width:" 100%"
+      }}>
+        <SwitchTheme />
+        <Profile />
+      </div>
     </div>
   );
 };

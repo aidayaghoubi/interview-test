@@ -1,0 +1,48 @@
+.profile {
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 15px;
+  background-color: var(--hover-color);
+  border-radius: 10px;
+  width: 194px;
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
+  overflow: hidden;
+  height: 56px;
+
+  & span {
+ 
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+
+    img {
+      height: 40px;
+      height: 40px;
+      background-color: #fff;
+      border-radius: 50%;
+      margin: 0 12px;
+    }
+  }
+  & div {
+    overflow: hidden;
+    transition: 0.3s;
+    max-height: 40px;
+    & p {
+      margin: 0;
+      overflow: hidden;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--links-color);
+      transition: 0.3s;
+    }
+    & span {
+    
+      transition: 0.3s;
+      color: var(--title-color);
+      font-size: 12px;
+    }
+  }
+}
