@@ -18,6 +18,10 @@
 
 body{
   font-family: 'Poppins', sans-serif;
-  background-color: #E1E4E9;
+  background-color: var(--hover-color);
   transition: 0.3s;
+}
+.container{
+  display: flex;
+  justify-content: center;
 }

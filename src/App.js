@@ -1,8 +1,17 @@
-import Home from "./home";
-import "./App.css"
+
+import "./App.css";
+import Navbar from "./navbar/Navbar";
 
 function App() {
-  return <Home/>;
+
+  return (
+    <div className="container">
+      <aside>
+        <Navbar />
+      </aside>
+      <section>{/* empty space */}</section>
+    </div>
+  );
 }
 
 export default App;
