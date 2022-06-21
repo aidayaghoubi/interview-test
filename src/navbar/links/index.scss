@@ -7,7 +7,7 @@
     transition: 0.3s;
     width: 93%;
     white-space: nowrap;
-    overflow: hidden;
+   
     text-overflow: ellipsis;
     
     & .links-title{
@@ -27,7 +27,7 @@
         transition: 0.3s    ;
         width: 100%;
         transition: 0.3s;
-        padding: 5px 7px;   
+       
 
         & p{
             opacity: 1;

@@ -73,6 +73,7 @@
 
   .linkBox {
     margin: 6px 0;
+    
   }
   .linkBox a p {
     max-width: 250px;
@@ -83,6 +84,9 @@
 
 .close {
   width: 106px;
+  .linkBox{
+    overflow: hidden;
+  }
 
   .linkBox a p {
     max-width: 0px;
